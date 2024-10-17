@@ -21,7 +21,7 @@ export class CancelFundComponent implements OnInit {
   }
 
   fetchFunds() {
-    const url = 'http://107.21.198.29:8000/getFundViculate/';
+    const url = 'http://98.82.200.42:8000/getFundViculate/';
     const headers = new HttpHeaders({
       accept: 'application/json',
     });
@@ -47,7 +47,7 @@ export class CancelFundComponent implements OnInit {
   }
 
   cancelFund(fundId: string) {
-    const url = `http://107.21.198.29:8000/canceledBodingFund/?Id=${encodeURIComponent(fundId)}`;
+    const url = `http://98.82.200.42:8000/canceledBodingFund/?Id=${encodeURIComponent(fundId)}`;
     const headers = new HttpHeaders({
       accept: 'application/json',
     });

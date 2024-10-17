@@ -36,7 +36,7 @@ export class HistorialTransactionComponent implements OnInit {
   }
 
   fetchTransactions(): void {
-    this.http.get<{ status: number; message: string; data: Transaction[] }>('http://107.21.198.29:8000/getTransactions/')
+    this.http.get<{ status: number; message: string; data: Transaction[] }>('http://98.82.200.42:8000/getTransactions/')
       .subscribe(response => {
         if (response.status === 200) {
           this.transactions = response.data;
