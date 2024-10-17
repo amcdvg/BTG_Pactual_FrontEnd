@@ -1,0 +1,48 @@
+.card-container {
+  //display: flex;
+  justify-content: space-between; /* Espacio entre las tarjetas */
+  align-items: center; /* Centra verticalmente las tarjetas */
+  margin-top: 80px;
+}
+
+.card {
+  width: 48%; /* Ancho de cada tarjeta */
+  margin-bottom: 20px; /* Espacio entre tarjetas */
+  max-width: 600px; /* Ancho máximo para cada tarjeta */
+}
+.card-image img {
+  width: 100%; /* Hace que la imagen ocupe todo el ancho de la tarjeta */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.card-title {
+  position: absolute; /* Posiciona el título de la tarjeta sobre la imagen */
+  left: 16px;
+  bottom: 16px;
+  color: white; /* Color del texto */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  padding: 5px; /* Espacio alrededor del texto */
+}
+.separator {
+  height: 2px; /* Altura de la línea */
+  background-color: #000; /* Color de la línea */
+  margin: 10px 0; /* Espacio arriba y abajo de la línea */
+  width: 100%; /* Ancho de la línea */
+}
+
+.centered-title {
+  text-align: center; /* Centra el texto del h2 */
+  color: rgb(10, 10, 40); /* Color azul para el texto */
+  font-weight: bold; /* Texto en negrita */
+}
+.centered {
+  text-align: center; /* Centra el texto */
+}
+
+.italic-text {
+  font-style: italic; /* Establece el texto en cursiva */
+}
+
+
+
+

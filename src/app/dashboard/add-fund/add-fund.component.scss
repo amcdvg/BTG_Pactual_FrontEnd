@@ -1,0 +1,78 @@
+/* Estilos para centrar la tarjeta del formulario */
+.form-container {
+  display: flex;
+  justify-content: center; /* Centra la tarjeta horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 1200px; /* Ancho fijo de la tarjeta */
+}
+
+/* Estilos para la tarjeta del formulario */
+.form-card {
+  width: 600px; /* Ancho fijo de la tarjeta */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra de la tarjeta */
+  background-color: #ffffff; /* Color de fondo */
+  //margin: 0px 0px; /* Margen a los lados para distancia */
+}
+
+/* Estilos para los elementos del formulario */
+.form-group {
+  margin-bottom: 15px; /* Espacio entre los campos */
+}
+
+label {
+  font-weight: bold; /* Negrita para las etiquetas */
+  margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+  display: block; /* Hace que la etiqueta ocupe todo el ancho */
+}
+
+input,
+select {
+  width: 100%; /* Ancho completo para los campos del formulario */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ccc; /* Borde de los campos */
+  border-radius: 5px; /* Bordes redondeados */
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+  transition: border-color 0.3s; /* Suaviza el cambio de color del borde */
+}
+
+input:focus,
+select:focus {
+  border-color: #4169E1; /* Cambia el color del borde al enfocar */
+  outline: none; /* Quita el contorno del borde */
+}
+
+/* Estilos para el botón de envío */
+button {
+  width: 100%; /* Ancho completo para el botón */
+  padding: 10px; /* Espaciado interno */
+  background-color: #4169E1; /* Azul rey */
+  color: white; /* Color del texto (blanco) */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  font-weight: bold; /* Negrita */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  transition: background-color 0.3s; /* Suaviza el cambio de color */
+}
+
+button:hover {
+  background-color: #0056b3; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilos para la tarjeta de respuesta */
+.response-card {
+  margin-top: 20px; /* Espacio entre el formulario y la tarjeta de respuesta */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f0f8ff; /* Color de fondo opcional */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra de la tarjeta de respuesta */
+}
+
+.loader {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #4169E1; /* Color azul rey para el texto del loader */
+}

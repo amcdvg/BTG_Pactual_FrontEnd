@@ -1,0 +1,181 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Asegura que el dashboard ocupe toda la altura de la ventana */
+}
+
+.header {
+  background-color: #343a40; /* Color del encabezado */
+  color: white; /* Color del texto del encabezado */
+  padding: 10px; /* Espaciado interno del encabezado */
+  display: flex;
+  justify-content: space-between; /* Espacio entre logo y usuario */
+  align-items: center; /* Centra verticalmente el contenido */
+}
+
+.main-content {
+  display: flex; /* Para colocar sidebar y contenido principal uno al lado del otro */
+  flex: 1; /* Ocupa el espacio restante */
+}
+
+.sidebar {
+  background-color: #021b36; /* Color de fondo de la barra lateral */
+  color: white; /* Color del texto de la barra lateral */
+  width: 200px; /* Ancho de la barra lateral */
+  padding: 10px; /* Espaciado interno */
+  position: relative; /* Para posicionar el botón de alternancia */
+  //transition: width 0.3s; /* Transición suave al cambiar el ancho */
+
+}
+
+.sidebar.hidden {
+  width: 0; /* Oculta la barra lateral cuando se activa la clase "hidden" */
+  overflow: hidden; /* Asegura que no se muestre contenido al estar oculta */
+}
+
+.toggle-button {
+  position: absolute; /* Posiciona el botón de alternancia de forma absoluta */
+  top: 80px; /* Ajusta la posición vertical */
+  right: -35px; /* Ajusta la posición horizontal fuera de la barra lateral */
+  background-color: #dfe6ee; /* Color de fondo del botón */
+  color: white; /* Color del texto */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor de puntero al pasar sobre el botón */
+  padding: 5px 10px; /* Espaciado interno del botón */
+  font-size: 20px; /* Tamaño del texto del botón */
+  z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+}
+.logout-button {
+  background: transparent; /* Sin color de fondo para el botón */
+  border: none; /* Sin bordes */
+  color: white; /* Color del ícono */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+  font-size: 24px; /* Tamaño del ícono */
+
+  transition: color 0.3s; /* Transición suave al cambiar el color */
+}
+
+.logout-button:hover {
+  color: #1a0b4d; /* Cambia el color del ícono al pasar el ratón */
+}
+
+.user-info {
+  display: flex; /* Usar flexbox para alinear el nombre y el botón */
+  align-items: center; /* Centra verticalmente */
+}
+
+.user-name {
+  margin-right: 20px; /* Ajusta el margen derecho para separar del botón */
+  color: white; /* Color del texto */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #050505;
+}
+
+.logo-img {
+  width: 100px;   /* Ajusta el tamaño del ancho */
+  height: auto;   /* El alto se ajusta automáticamente manteniendo la proporción */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-direction: column; /* Coloca los botones en columna */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.navslide {
+  padding: 15px;
+  width: 100%; /* Cada botón ocupa todo el ancho disponible */
+  background-color: #021b36;
+  border: none;
+  color: white;
+  text-align: left; /* Alinea el texto del botón a la izquierda */
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 10px; /* Espacio entre los botones */
+}
+
+.navslide.active {
+  background-color: #0056b3; /* Color diferente cuando el botón está activo */
+}
+
+.navslide:hover {
+  background-color: #0056b3; /* Color de hover */
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Distribuye las tarjetas de forma equitativa */
+  gap: 20px; /* Añade espacio entre las tarjetas */
+  padding: 20px;
+}
+
+.card {
+  background-color: #f9f9f9; /* Fondo claro para las tarjetas */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  width: 48%; /* Ajusta el ancho de cada tarjeta para que quepan dos en fila */
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card p {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Las tarjetas se colocan en columna en pantallas pequeñas */
+  }
+
+  .card {
+    width: 100%; /* Las tarjetas ocupan todo el ancho en pantallas pequeñas */
+  }
+}
+
+.separator {
+  height: 2px; /* Altura de la línea */
+  background-color: #f8f6f6; /* Color de la línea */
+  margin: 10px 0; /* Espacio arriba y abajo de la línea */
+  width: 100%; /* Ancho de la línea */
+}
+
+.centered-bold {
+  text-align: center; /* Centra el texto horizontalmente */
+  font-weight: bold; /* Aplica negrita al texto */
+}
+
+.navslide {
+  display: flex;              /* Utiliza flexbox para el botón */
+  align-items: center;       /* Centra verticalmente el contenido del botón */
+  justify-content: center;    /* Centra horizontalmente el contenido del botón */
+  height: 50px;              /* Puedes ajustar la altura del botón si es necesario */
+}
+
+.material-icons.center {
+  margin: 0;                /* Elimina márgenes alrededor del icono */
+  font-size: 24px;          /* Ajusta el tamaño del icono según tus necesidades */
+}
+

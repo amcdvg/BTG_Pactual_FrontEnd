@@ -1,0 +1,67 @@
+<div class="dashboard">
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-YB_c0rPajlDw7mCtnp-ZKfF6P0LDlQ7_dA&s" alt="Logo" class="logo-img" />
+    </div>
+    <div class="user-info">
+      <span class="user-name">Bienvenido, {{ userName }}</span>
+      <button class="logout-button" (click)="logout()">
+      <i class="material-icons">logout</i>
+    </button>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <aside class="sidebar" [class.hidden]="isSidebarHidden">
+      <nav>
+        <div class="nav-buttons">
+          <h3 class="centered-bold">Inicio</h3>
+          <button class="navslide" routerLink="/dashboard/info" routerLinkActive="active">
+            <i class="material-icons center">home</i>
+          </button>
+          <div class="separator"></div>
+          <section class="transactions-section">
+            <h3 class="centered-bold">Transacciones</h3>
+            <button mat-raised-button class="navslide" routerLink="/dashboard/transactions" routerLinkActive="active">Historial</button>
+          </section>
+          <div class="separator"></div>
+          <section class="investment-opening-section">
+            <h3 class="centered-bold">Apertura de Inversión</h3>
+            <button mat-raised-button class="navslide" routerLink="/dashboard/addFund" routerLinkActive="active">Abrir Inversión</button>
+          </section>
+          <div class="separator"></div>
+          <section class="investment-cancellation-section">
+            <h3 class="centered-bold">Cancelación de Inversión</h3>
+            <button mat-raised-button class="action-button" class="navslide" routerLink="/dashboard/cancelFund" routerLinkActive="active">Cancelar Inversión</button>
+          </section>
+          <div class="separator"></div>
+          <section class="investment-cancellation-section">
+            <h3 class="centered-bold">Saldo</h3>
+            <button mat-raised-button class="action-button" class="navslide" routerLink="/dashboard/GetAccount" routerLinkActive="active">Saldo</button>
+          </section>
+        </div>
+      </nav>
+
+      <!-- Botón para alternar la barra lateral -->
+      <button class="toggle-button" (click)="toggleSidebar()">
+        <i class="material-icons">{{ isSidebarHidden ? 'chevron_right' : 'chevron_left' }}</i>
+      </button>
+    </aside>
+    <section class="content">
+
+      <!-- Aquí se renderizan las secciones del dashboard -->
+      <router-outlet></router-outlet>
+      <div *ngIf="!optionSelected">
+        <a routerLink="/dashboard/info" class="info-link"></a>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+
+
+
+
+

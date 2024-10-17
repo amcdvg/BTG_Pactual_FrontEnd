@@ -1,0 +1,113 @@
+.alert-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ocupa el 100% de la altura de la vista */
+  background-color: #f0f0f0; /* Color de fondo de la vista */
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuIPPjSq_lVF0YLfGQIgWbClQzqVX7N1iNGA&s'); // Cambia esta URL por la imagen que desees
+  background-size: cover; // Asegura que la imagen cubra todo el contenedor
+  background-position: center; // Centra la imagen
+}
+.alert-text {
+  flex: 1; /* Segunda columna, ocupa toda la mitad derecha */
+  padding: 20px; /* Espaciado interno */
+  box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+  display: flex; /* Usar flexbox para centrar el contenido */
+  flex-direction: column; /* Dirección de las columnas */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  text-align: center; /* Centra el texto */
+}
+
+.alert-text mat-card-title {
+  font-size: 55px; /* Aumenta el tamaño del título */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+.alert-text p {
+  font-size: 16px; /* Aumenta el tamaño del párrafo */
+  line-height: 1.5; /* Mejora la legibilidad */
+  max-width: 600px; /* Limita el ancho del texto para mejorar la presentación */
+}
+
+
+.alert-card {
+  width: 1000px; /* Ancho fijo de la card */
+  height: 500px; /* Altura fija de la card */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Para posicionar el botón */
+}
+
+.alert-content {
+  display: flex; /* Usar flexbox para dividir en columnas */
+  height: calc(100% - 50px); /* Restar la altura del botón */
+}
+
+.alert-image {
+  flex: 1; /* Primera columna, ocupa toda la mitad izquierda */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //overflow: hidden; /* Asegura que nada se desborde */
+  position: relative;
+}
+
+.alert-image img {
+  width: 100%; /* Ajusta la imagen al tamaño de la columna */
+  height: 100%; /* Asegura que la imagen ocupe toda la altura */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 10px 0 0 10px; /* Bordes redondeados para la imagen */
+}
+
+.alert-text {
+  flex: 1; /* Segunda columna, ocupa toda la mitad derecha */
+  padding: 20px; /* Espaciado interno */
+  box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+}
+
+.button-container {
+  position: absolute; /* Posiciona el botón de forma absoluta */
+  bottom: 20px; /* Ajusta la distancia desde la parte inferior */
+  right: 20px; /* Alinea el botón a la derecha */
+}
+
+.transparent-button {
+  background-color: transparent; /* Botón transparente */
+  color: #007bff; /* Color del texto del botón */
+  border: 1px solid #007bff; /* Bordes del botón */
+}
+
+.transparent-button:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Color de fondo al pasar el mouse */
+}
+.alert-card {
+  background-color: #ffffff; /* Color de fondo de la tarjeta */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 0; /* Elimina el padding para que el footer ocupe todo el ancho */
+  width: 1000px; /* Ajusta el ancho de la card */
+  max-width: 1000px; /* Máximo ancho para la card */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+}
+
+.alert-content {
+  padding: 20px; /* Espacio interno para el contenido principal de la tarjeta */
+}
+
+.footer-container {
+  display: flex; /* Usar flexbox para centrar el contenido */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  padding: 0; /* Elimina el padding para que ocupe todo el ancho */
+  margin: 0; /* Elimina cualquier margen */
+  background-color: #2a2a39; /* Color de fondo del footer */
+}
+
+.footer-image {
+  width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+  height: auto; /* Mantiene la relación de aspecto de la imagen */
+  max-height: 80px; /* Limita la altura máxima para evitar que sea demasiado grande */
+  object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
+}
+

@@ -1,0 +1,130 @@
+.table-container {
+  width: 100%; /* Ancho del contenedor completo */
+  margin: 250 100px 0 0; /* Margen derecho de 100px y centrado vertical */
+  padding: 20px; /* Espaciado alrededor */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Color de fondo suave del contenedor */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra del contenedor */
+  width: 100%; /* Ancho de la tabla completa */
+  border-collapse: collapse; /* Quitar espacio entre bordes */
+}
+
+/* Asegúrate de que la tabla ocupe el ancho completo */
+.transaction-table {
+  width: 100%; /* Ancho de la tabla completa */
+  border-collapse: collapse; /* Quitar espacio entre bordes */
+}
+
+/* Estilo general para el encabezado */
+h2 {
+  text-align: center; /* Centrar el encabezado */
+  color: #180255; /* Color del texto */
+  font-weight: bold; /* Negrita */
+  font-weight: italic; /* Negrita */
+  margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+/* Estilo para la tabla */
+.transaction-table {
+  width: 100%; /* Ancho de la tabla completa */
+  border-collapse: collapse; /* Quitar espacio entre bordes */
+}
+
+.separator {
+  height: 2px; /* Altura de la línea */
+  background-color: #000; /* Color de la línea */
+  margin: 3px 0; /* Espacio arriba y abajo de la línea */
+  width: 100%; /* Ancho de la línea */
+}
+
+/* Estilo para el encabezado de la tabla */
+.transaction-table thead {
+  background-color: #e7f3ff; /* Color de fondo suave para el encabezado */
+  color: #333; /* Color del texto del encabezado */
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 12px 15px; /* Espaciado interno */
+  text-align: center; /* Centrar texto en las celdas */
+  border-bottom: 1px solid #ccc; /* Línea entre filas */
+  border: 1px solid #ccc; /* Borde para las celdas */
+}
+
+/* Estilo para las filas de la tabla */
+.transaction-table tbody tr:hover {
+  background-color: #f1f1f1; /* Color de fondo al pasar el mouse */
+}
+
+.transaction-table td {
+  background-color: #fff; /* Color de fondo de las celdas */
+}
+
+/* Estilo para los bordes de las celdas */
+.transaction-table th {
+  border-bottom: 2px solid #007bff; /* Línea inferior más gruesa en el encabezado */
+}
+.pagination {
+  display: flex;
+  justify-content: flex-end; /* Alinear a la derecha */
+  align-items: center; /* Centrar verticalmente */
+  margin-top: 20px; /* Espacio superior */
+}
+
+.pagination button {
+  background-color: #007bff; /* Color del botón */
+  color: white; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  padding: 10px 15px; /* Espaciado interno */
+  margin: 0 5px; /* Margen lateral */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+.pagination button:disabled {
+  background-color: #ccc; /* Color cuando está deshabilitado */
+  cursor: not-allowed; /* Cambiar el cursor cuando está deshabilitado */
+}
+.transaction-table th,
+.transaction-table td {
+  padding: 12px 15px; /* Espaciado interno */
+  text-align: center; /* Centrar texto en las celdas */
+  border: 1px solid #ccc; /* Borde para las celdas */
+  min-width: 120px; /* Ancho mínimo para cada celda (ajusta según tus necesidades) */
+}
+
+/* Ajuste de ancho específico para algunas columnas si es necesario */
+.transaction-table th:nth-child(1), /* ID */
+.transaction-table td:nth-child(1) {
+  min-width: 100px; /* Ancho mínimo para la columna ID */
+}
+
+.transaction-table th:nth-child(2), /* Fecha */
+.transaction-table td:nth-child(2) {
+  min-width: 150px; /* Ancho mínimo para la columna Fecha */
+}
+
+.transaction-table th:nth-child(3), /* Notificación */
+.transaction-table td:nth-child(3) {
+  min-width: 150px; /* Ancho mínimo para la columna Notificación */
+}
+
+.transaction-table th:nth-child(4), /* Fondo */
+.transaction-table td:nth-child(4) {
+  min-width: 150px; /* Ancho mínimo para la columna Fondo */
+}
+
+.transaction-table th:nth-child(5), /* Categoría */
+.transaction-table td:nth-child(5) {
+  min-width: 150px; /* Ancho mínimo para la columna Categoría */
+}
+
+.transaction-table th:nth-child(6), /* Monto */
+.transaction-table td:nth-child(6) {
+  min-width: 120px; /* Ancho mínimo para la columna Monto */
+}
+
+.transaction-table th:nth-child(7), /* Estado */
+.transaction-table td:nth-child(7) {
+  min-width: 120px; /* Ancho mínimo para la columna Estado */
+}

@@ -1,0 +1,32 @@
+<div class="login-container" [@slideIn]>
+  <mat-card class="login-card">
+    <div class="login-content">
+      <div class="login-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9vNzlVw8UKffUT6PsDNzG5J0jo1QLGr8AVFGFcIJlKGS3oIiaGwOghm_TmAMhqbVh3dc&usqp=CAU" alt="Imagen de fondo" />
+      </div>
+      <div class="login-form">
+        <mat-card-title>Inicio de sesión</mat-card-title>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Correo</mat-label>
+            <input matInput formControlName="email" required />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            [ngClass]="{'clicked': isClicked}"
+            class="full-width bouttonl"
+            type="submit">
+            Iniciar sesión
+          </button>
+        </form>
+      </div>
+    </div>
+  </mat-card>
+</div>

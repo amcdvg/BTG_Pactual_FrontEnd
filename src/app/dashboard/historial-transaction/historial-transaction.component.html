@@ -1,0 +1,43 @@
+<div class="table-container">
+  <h2>Historial de Transacciones</h2>
+  <div class="separator"></div>
+  <div class="separator"></div>
+  <table class="transaction-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Notificación</th>
+        <th>Fondo</th>
+        <th>Categoría</th>
+        <th>Monto</th>
+        <th>Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of currentTransactions">
+        <td>{{ transaction.uniqueNumber}}</td>
+        <td>{{ transaction.date | date:'short' }}</td>
+        <td>{{ transaction.fundsInvestment.notification }}</td>
+        <td>{{ transaction.fund.name }}</td>
+        <td>{{ transaction.fund.category }}</td>
+        <td>{{ transaction.amount | currency }}</td>
+        <td>{{ transaction.type }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Paginador -->
+  <div class="pagination">
+    <button class="btn" (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+      <i class="material-icons">chevron_left</i>
+    </button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button class="btn" (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">
+      <i class="material-icons">chevron_right</i>
+    </button>
+  </div>
+</div>
+
+
+

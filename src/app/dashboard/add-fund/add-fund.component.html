@@ -1,0 +1,62 @@
+<div class="form-container">
+  <div class="form-card">
+    <h2 class="form-title">Apertura de fondos</h2>
+    <form (ngSubmit)="submitForm()" #bondingFundForm="ngForm">
+      <div class="form-group">
+        <label for="fund">Fondo</label>
+        <select id="fund" name="fund" [(ngModel)]="fund" required>
+          <option value="DEUDAPRIVADA">DEUDA PRIVADA</option>
+          <option value="FDO-ACCIONES">FDO ACCIONES</option>
+          <option value="FPV_BTG_PACTUAL_RECAUDADORA">FPV BTG PACTUAL RECAUDADORA</option>
+          <option value="FPV_BTG_PACTUAL_ECOPETROL">FPV BTG PACTUAL ECOPETROL</option>
+          <option value="FPV_BTG_PACTUAL_DINAMICA">FPV BTG PACTUAL DINAMICA</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="investedAmount">Monto a invertir</label>
+        <input
+          type="number"
+          id="investedAmount"
+          name="investedAmount"
+          [(ngModel)]="investedAmount"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fund">Notificación</label>
+        <select id="notification" name="notification" [(ngModel)]="notification" required>
+          <option value="MSM">msm</option>
+          <option value="EMAIL">email</option>
+        </select>
+      </div>
+
+
+      <button type="submit" [disabled]="isLoading">Submit</button>
+
+      <!-- Loader -->
+      <div *ngIf="isLoading" class="loader">
+        Cargando...
+      </div>
+    </form>
+
+    <!-- Card para mostrar la respuesta -->
+    <div *ngIf="responseData" class="response-card">
+      <h2>¡Felicidades has creado un nuevo fondo de inversión!</h2>
+      <p><strong>Fondo N°:</strong> {{ responseData.uniqueNumber }}</p>
+      <p><strong>Tipo:</strong> {{ responseData.type }}</p>
+      <p><strong>Monto:</strong> {{ responseData.amount }}</p>
+      <p><strong>Fecha:</strong> {{ formatDate(responseData.date)  }}</p>
+      <p><strong>Estatus:</strong> {{ responseData.status }}</p>
+      <div *ngIf="responseData.fundsInvestment">
+        <p><strong>Notificación por:</strong> {{ responseData.fundsInvestment.notification }}</p>
+      </div>
+      <div *ngIf="responseData.fund">
+        <p><strong>Nombre del Fondo:</strong> {{ responseData.fund.name }}</p>
+        <p><strong>Categoría del Fondo:</strong> {{ responseData.fund.category }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

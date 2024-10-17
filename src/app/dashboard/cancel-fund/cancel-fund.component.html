@@ -1,0 +1,60 @@
+<div class="table-container">
+<div *ngIf="isLoading">Cargando...</div>
+<div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+<div class="separator"></div>
+  <div class="separator"></div>
+<h2>Cancelar Fondos de Inversión</h2> <!-- Título de la tabla -->
+<div class="separator"></div>
+  <div class="separator"></div>
+<table *ngIf="funds.length > 0">
+  <thead>
+    <tr>
+      <th>ID de Notificación</th>
+      <th>Número Único</th>
+      <th>Nombre del Fondo</th>
+      <th>Categoría</th>
+      <th>Monto Invertido</th>
+      <th>Fecha de Vinculación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fund of paginatedFunds()">
+      <td>{{ fund.notificationId }}</td>
+      <td>{{ fund.uniqueNumber }}</td>
+      <td>{{ fund.fund.name }}</td>
+      <td>{{ fund.fund.category }}</td>
+      <td>{{ fund.investedAmount }}</td>
+      <td>{{ formatDate(fund.bondingDate) }}</td>
+      <td>
+        <button (click)="cancelFund(fund.id)" class="icon-button">
+          <span class="material-icons">delete</span> <!-- Icono de eliminar -->
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="funds.length === 0 && !isLoading">
+  No hay fondos activos disponibles.
+</div>
+
+<!-- Agregar contenedor para paginación -->
+<div class="pagination-container">
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1" class="icon-button">
+      <span class="material-icons">chevron_left</span> <!-- Icono de anterior -->
+    </button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="icon-button">
+      <span class="material-icons">chevron_right</span> <!-- Icono de siguiente -->
+    </button>
+  </div>
+</div>
+<!-- Loader animado para la acción de cancelar -->
+<div *ngIf="isCancelling" class="loader">
+  <div class="reload-animation"></div>
+  Cancelando fondo...
+</div>
+</div>
+
