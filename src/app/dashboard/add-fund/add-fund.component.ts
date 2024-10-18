@@ -30,7 +30,7 @@ export class BondingFundComponent {
       return;
     }
 
-    const url = `http://98.82.200.42:8000/vinculatedBodingFund/?email=${encodeURIComponent(this.email)}&fund=${encodeURIComponent(this.fund)}`;
+    const url = `http://54.237.13.164:8000/vinculatedBodingFund/?email=${encodeURIComponent(this.email)}&fund=${encodeURIComponent(this.fund)}`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       accept: 'application/json',
