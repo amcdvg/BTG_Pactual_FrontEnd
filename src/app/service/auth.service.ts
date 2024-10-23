@@ -7,14 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'http://54.237.13.164:8000/login/'; // Asegúrate de que la URL sea correcta
+  private apiUrl = 'https://930fud1478.execute-api.us-east-1.amazonaws.com/login'; // Asegúrate de que la URL sea correcta
 
   constructor(private http: HttpClient) { }
 
   login(email: string, password: string): Observable<any> {
-    const url = `${this.apiUrl}?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`; // Crea la URL con query parameters
 
-    return this.http.post(url, {}); // Envía un objeto vacío como body
+    return this.http.post(this.apiUrl, {
+      "email": email,
+      "password": password
+    }); 
   }
 
   // Guardar el token en el localStorage o sessionStorage

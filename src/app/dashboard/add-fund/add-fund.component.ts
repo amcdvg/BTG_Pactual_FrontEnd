@@ -23,28 +23,29 @@ export class BondingFundComponent {
 
     // Limpiar los datos del formulario justo al hacer clic en "Submit"
 
-
     // Validar que el email no sea null antes de continuar
     if (!this.email) {
       console.error('Error: El correo electrónico no está definido.');
       return;
     }
 
-    const url = `http://54.237.13.164:8000/vinculatedBodingFund/?email=${encodeURIComponent(this.email)}&fund=${encodeURIComponent(this.fund)}`;
+    const url = 'https://jka3t1xyq1.execute-api.us-east-1.amazonaws.com/vinculatedBodingFund';
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       accept: 'application/json',
     });
 
     const requestBody = {
-      _id: '',
+      _id: '', // Puedes dejar esto vacío si no lo necesitas
       fundId: this.fund,
       investedAmount: this.investedAmount,
       bondingDate: new Date().toISOString(),
-      userId: '',
+      userId: '', // Si necesitas el userId, puedes obtenerlo de alguna manera
       notificationPreferences: this.notification,
-      notificationId: '',
-      uniqueNumber: '',
+      notificationId: '', // Igual que _id, puedes dejar esto vacío si no es necesario
+      uniqueNumber: '', // Si es necesario, deberías definir cómo se genera
+      email: this.email, // Incluir el correo electrónico aquí
+      fund: this.fund, // Incluir el fund aquí, asegurándote de que tenga el valor correcto
     };
 
     console.log(requestBody);

@@ -25,6 +25,7 @@ import { BondingFundComponent } from './dashboard/add-fund/add-fund.component';
 import { FormsModule } from '@angular/forms';
 import { CancelFundComponent } from './dashboard/cancel-fund/cancel-fund.component';
 import { BalanceCardComponent } from './dashboard/balance-card/balance-card.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { BalanceCardComponent } from './dashboard/balance-card/balance-card.comp
     BondingFundComponent,
     CancelFundComponent,
     BalanceCardComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -55,4 +55,8 @@ export class LoginComponent {
     }
   }
 
+  onNewUser() {
+    this.router.navigate(['/register']); // O la ruta que desees para el registro
+  }
+
 }

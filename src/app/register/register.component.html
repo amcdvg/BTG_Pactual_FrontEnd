@@ -1,0 +1,55 @@
+<div class="login-container" [@slideIn]>
+  <mat-card class="login-card">
+    <div class="login-content">
+      <div class="login-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9vNzlVw8UKffUT6PsDNzG5J0jo1QLGr8AVFGFcIJlKGS3oIiaGwOghm_TmAMhqbVh3dc&usqp=CAU" alt="Imagen de fondo" />
+      </div>
+      <div class="login-form">
+        <mat-card-title>Registro de Usuario</mat-card-title>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Correo</mat-label>
+            <input matInput formControlName="email" required />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput formControlName="fullName" required />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Número de Teléfono</mat-label>
+            <input matInput formControlName="phoneNumber" required />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="hashedPassword" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Confirmar Contraseña</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmHashedPassword" required />
+            <button mat-icon-button matSuffix (click)="hide = !hide" type="button">
+              <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+          </mat-form-field>
+          <button
+            mat-raised-button
+            [ngClass]="{'clicked': isClicked}"
+            class="full-width bouttonl"
+            type="submit">
+            Registrar
+          </button>
+        </form>
+        <button
+          mat-raised-button
+          [ngClass]="{'clicked': isClicked}"
+          class="full-width bouttonU"
+          (click)="navigateToLogin()">
+          Volver a inicio de sesión
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>
+

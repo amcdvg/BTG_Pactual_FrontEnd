@@ -36,10 +36,17 @@ export class HistorialTransactionComponent implements OnInit {
   }
 
   fetchTransactions(): void {
-    this.http.get<{ status: number; message: string; data: Transaction[] }>('http://54.237.13.164:8000/getTransactions/')
+    this.http.get<{ status: number; message: string; data: Transaction[] }>('https://z9fftw2tb1.execute-api.us-east-1.amazonaws.com/getTransactions')
       .subscribe(response => {
         if (response.status === 200) {
           this.transactions = response.data;
+          console.log(this.transactions)
+          this.transactions.sort((a, b) => {
+            const dateA = new Date(a.date);
+            const dateB = new Date(b.date);
+            return dateB.getTime() - dateA.getTime(); // Ordena de más reciente a más antiguo
+          });
+
         } else {
           console.error('Error fetching transactions:', response.message);
         }

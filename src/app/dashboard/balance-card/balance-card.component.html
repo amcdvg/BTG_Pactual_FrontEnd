@@ -1,7 +1,8 @@
+<div class="card-container">
 <div *ngIf="balanceData" class="balance-container">
   <mat-card class="balance-card">
     <div class="balance-content">
-      <mat-card-title>Información de su cuenta</mat-card-title>
+      <mat-card-title class="centered-title">Información de su cuenta</mat-card-title>
       <div class="balance-body">
         <p>Nombre: {{ balanceData?.data?.name }}</p>
         <p>Correo electrónico: {{ balanceData?.data?.email }}</p>
@@ -11,4 +12,5 @@
       </div>
     </div>
   </mat-card>
+</div>
 </div>

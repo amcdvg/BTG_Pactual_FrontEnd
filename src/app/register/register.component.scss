@@ -13,14 +13,17 @@
 .login-card {
   display: flex;
   width: 800px; // Aumenta el ancho de la tarjeta
-  height: 500px; // Aumenta el alto de la tarjeta
+  height: 580px; // Aumenta el alto de la tarjeta
   border-radius: 8px; // Bordes redondeados
   overflow: hidden; // Oculta el desbordamiento
+
 }
 
 .login-content {
   display: flex;
   width: 100%; // Ancho completo de la tarjeta
+
+  //padding: 20px; // Ajusta el espaciado interno según sea necesario
 }
 
 .login-image {
@@ -50,23 +53,22 @@
   width: 100%; // Ancho completo para los campos del formulario
 }
 
-.clicked {
-  background-color: #a6a6b7 !important;  // Cambia a tu color deseado
-  color: rgb(241, 241, 245); // Cambia el color del texto si es necesario
+.mat-form-field .mat-card-title {
+  margin-bottom: 2px; // Ajusta este valor para reducir el espacio entre los campos
 }
+
+// Estilos para botones y otros elementos aquí
 .bouttonl {
   background-color: #4169E1 !important; // Azul rey
   color: white !important; // Color del texto (blanco)
-  font-weight: bold !important;// Negrita
+  font-weight: bold !important; // Negrita
   font-style: italic !important;
   transition: background-color 0.3s ease; // Suaviza el cambio de color
 
-  // Efecto hover (opcional)
   &:hover {
     background-color: #020e2e; // Un tono más oscuro al pasar el mouse
   }
 
-  // Para asegurarte de que el color se mantenga cuando el botón esté activo
   &.clicked {
     background-color: #FF5722 !important; // Cambia a otro color deseado al hacer clic
     color: white !important; // El color del texto permanece blanco
@@ -74,29 +76,18 @@
   }
 }
 
-.card-title {
-  text-align: center;       // Centra el texto
-  color: #021651;          // Azul rey
-  font-weight: bold;       // Negrita
-  font-style: italic;      // Cursiva (opcional)
-  margin-bottom: 20px;     // Espacio debajo del título (opcional)
-}
-
-
 .bouttonU {
   background-color: #b7b4f3 !important; // Azul rey
   color: white !important; // Color del texto (blanco)
-  font-weight: bold !important;// Negrita
+  font-weight: bold !important; // Negrita
   font-style: italic !important;
-  margin-top: 8px; /* Espacio entre los botones */
+  margin-top: 5px; // Espacio entre los botones
   transition: background-color 0.3s ease; // Suaviza el cambio de color
 
-  // Efecto hover (opcional)
   &:hover {
     background-color: #020e2e; // Un tono más oscuro al pasar el mouse
   }
 
-  // Para asegurarte de que el color se mantenga cuando el botón esté activo
   &.clicked {
     background-color: #FF5722 !important; // Cambia a otro color deseado al hacer clic
     color: white !important; // El color del texto permanece blanco

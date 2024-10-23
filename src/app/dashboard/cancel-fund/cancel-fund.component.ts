@@ -21,7 +21,7 @@ export class CancelFundComponent implements OnInit {
   }
 
   fetchFunds() {
-    const url = 'http://54.237.13.164:8000/getFundViculate/';
+    const url = 'https://5ffmf9stq6.execute-api.us-east-1.amazonaws.com/getFundViculate';
     const headers = new HttpHeaders({
       accept: 'application/json',
     });
@@ -47,12 +47,18 @@ export class CancelFundComponent implements OnInit {
   }
 
   cancelFund(fundId: string) {
-    const url = `http://54.237.13.164:8000/canceledBodingFund/?Id=${encodeURIComponent(fundId)}`;
+    const url = `https://6exdiat1dg.execute-api.us-east-1.amazonaws.com/canceledBodingFund`;
     const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
       accept: 'application/json',
     });
+
+    const requestBody = {
+      id: fundId // Aquí pasamos el ID del fondo que queremos cancelar
+    };
+
     this.isCancelling = true; // Mostrar el loader de cancelación
-    this.http.post(url, {}, { headers }).subscribe(
+    this.http.post(url, requestBody, { headers }).subscribe(
       (response: any) => {
         if (response.status === 200) {
           alert('El fondo fue cancelado exitosamente.');
@@ -69,9 +75,10 @@ export class CancelFundComponent implements OnInit {
         this.isCancelling = false; // Ocultar el loader de cancelación
       }
     );
-  }
+}
 
-  formatDate(dateString: string): string {
+
+formatDate(dateString: string): string {
     const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'long', year: 'numeric' };
     const date = new Date(dateString);
     return date.toLocaleDateString('es-ES', options); // Formato en español

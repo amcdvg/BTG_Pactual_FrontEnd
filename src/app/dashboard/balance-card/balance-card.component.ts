@@ -28,7 +28,7 @@ export class BalanceCardComponent implements OnInit {
   }
 
   getBalance(): void {
-    this.http.get<BalanceResponse>('http://54.237.13.164:8000/getBalance/')
+    this.http.get<BalanceResponse>('https://53b8yy1qac.execute-api.us-east-1.amazonaws.com/getBalance')
       .subscribe(response => {
         this.balanceData = response;
       }, error => {
